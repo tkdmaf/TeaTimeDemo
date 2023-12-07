@@ -1,0 +1,31 @@
+﻿@model List<Product>
+<partial name="_Notification" />
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">產品清單</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="Upsert" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> 新增產品
+            </a>
+        </div>
+    </div>
+    <table id="tblData" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th class="text-center">序號</th>
+                <th class="text-center">圖片</th>
+                <th class="text-center">產品名稱</th>
+                <th class="text-center">類別</th>
+                <th class="text-center">Size</th>
+                <th class="text-center">價格</th>
+                <th class="text-center">備註</th>
+                <th class="text-center">功能</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section Scripts {
+    <script src="~/js/product.js"></script>
+}
