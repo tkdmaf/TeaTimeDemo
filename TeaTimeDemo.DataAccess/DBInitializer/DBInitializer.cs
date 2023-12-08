@@ -8,7 +8,7 @@ using TeaTimeDemo.DataAccess.Data;
 
 namespace TeaTimeDemo.DataAccess.DBInitializer
 {
-    internal class DBInitializer: IDBInitializer
+    public class DBInitializer: IDBInitializer
     {
         private readonly ApplicationDbContext _db;
 
