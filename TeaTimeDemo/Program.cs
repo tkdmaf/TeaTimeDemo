@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using TeaTimeDemo.DataAccess.Data;
 using TeaTimeDemo.DataAccess.Repository;
 using TeaTimeDemo.DataAccess.Repository.IRepository;
+using Microsoft.EntityFrameworkCore.Internal;
+using TeaTimeDemo.DataAccess.DBInitializer;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,10 +34,23 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+SeedDatabase();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
+
 app.Run();
+
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDBInitializer>();
+        dbInitializer.Initialize();
+    }
+}
+

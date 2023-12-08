@@ -17,3 +17,4 @@ C:\Users\USER\source\repos\TeaTimeDemo\TeaTimeDemo.DataAccess\obj\Debug\net8.0\r
 C:\Users\USER\source\repos\TeaTimeDemo\TeaTimeDemo.DataAccess\obj\Debug\net8.0\TeaTimeDemo.DataAccess.pdb
 C:\Users\USER\source\repos\TeaTimeDemo\TeaTimeDemo.DataAccess\obj\Debug\net8.0\TeaTimeDemo.DataAccess.genruntimeconfig.cache
 C:\Users\USER\source\repos\TeaTimeDemo\TeaTimeDemo.DataAccess\obj\Debug\net8.0\ref\TeaTimeDemo.DataAccess.dll
+C:\Users\USER\source\repos\TeaTimeDemo\TeaTimeDemo.DataAccess\obj\Debug\net8.0\TeaTimeDemo.DataAccess.sourcelink.json
