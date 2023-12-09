@@ -9,7 +9,7 @@ function loadDataTable() {
             url: '/admin/product/getall'
         },
         "columns": [
-            { data: 'id', "width": "10%" },
+            { data: 'id', "width": "5%" },
             {
                 data: 'imageUrl',
                 "width": "10%",
@@ -37,7 +37,7 @@ function loadDataTable() {
                             </a>
                         </div>`
                 },
-                "width": "15%"
+                "width": "20%"
             }
         ]
     });

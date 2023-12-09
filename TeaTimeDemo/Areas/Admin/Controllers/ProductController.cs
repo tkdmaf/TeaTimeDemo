@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Drawing;
 using TeaTimeDemo.DataAccess.Data;
 using TeaTimeDemo.DataAccess.Repository;
 using TeaTimeDemo.DataAccess.Repository.IRepository;
 using TeaTimeDemo.Models;
 using TeaTimeDemo.Models.ViewModels;
+using TeaTimeDemo.Utility;
 
 namespace TeaTimeDemo.Areas.Admin.Controllers
 {
@@ -63,9 +65,15 @@ namespace TeaTimeDemo.Areas.Admin.Controllers
                             System.IO.File.Delete(oldImagePath);
                         }
                     }
+                    Stream steam = file.OpenReadStream();
+                    //Image imageSrc = Image.FromStream(steam);
+                    
                     using (var filestream = new FileStream(Path.Combine(productPath, filename), FileMode.Create))
                     {
-                        file.CopyTo(filestream);
+                        ImageTool.GetPicThumbnail(steam, 640, 640, 80, filestream);   
+                        //file.CopyTo(filestream);
+                        //ImageTool.compressImage(filestream.Name, 50);
+
                     }
                     vm.Product.ImageUrl = @"\images\product\" + filename;
                 }
